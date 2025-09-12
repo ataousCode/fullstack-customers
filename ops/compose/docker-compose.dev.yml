@@ -1,0 +1,17 @@
+services:
+  db:
+    image: postgresql:16
+    environment:
+      POSTGRESQL_DB: customers_db
+      POSTGRES_USER: app
+      POSTGRES_PASSWORD: app
+    ports: ["5432:5432"]
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U app -d customers_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+volumes:
+  db_data:

@@ -1,0 +1,18 @@
+# Java
+/target/
+/.idea/
+/.project
+/.classpath
+/.settings/
+*.iml
+
+
+# Node
+node_modules/
+.dist/
+.DS_Store
+
+
+# Env
+.env*
+secrets/*
